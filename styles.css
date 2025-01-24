@@ -1,0 +1,184 @@
+/* Global Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background: url('Starry_night.jpg') no-repeat center center fixed; /* Fixed background */
+    background-size: cover; /* Cover entire viewport */
+}
+
+/* Sections */
+.section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent background for readability */
+}
+
+/* Introduction Section */
+.intro-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    height: 100vh;
+    color: white;
+    background: url('Starry_night.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Owl container */
+.owl-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.owl-image {
+    width: 600px;
+    animation: fly 1s infinite alternate;
+}
+
+@keyframes fly {
+    0% { transform: translateY(20); }
+    100% { transform: translateY(-20px); }
+}
+
+/* Introduction message box */
+.intro-message-box {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    color: #f0c75e;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+.intro-message-box h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.intro-message-box p {
+    font-size: 18px;
+}
+
+/* Navigation Menu */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f0c75e;
+    padding: 10px 20px;
+    background-color: #222;
+    transition: all 0.3s ease;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    color: white;
+    background-color: #f0c75e;
+    outline: 2px solid black;
+}
+
+/* Section Styling */
+.section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+#about, #portfolio, #contact {
+    background: rgba(34, 34, 34, 0.6); /* Add slight transparency to section background */
+    color: white; /* Text color */
+}
+
+h2 {
+    color: #f0c75e;
+    font-size: 36px;
+}
+
+/* Portfolio Grid Layout */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Portfolio Item Styling */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+/* Overlay for description */
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-image {
+    opacity: 0.8;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+/* Center last image if odd number */
+.portfolio-grid::after {
+    content: "";
+    display: block;
+    grid-column: span 2;
+}
+
+/* Contact Image Styling */
+.contact-image {
+    width: 100px; /* Set a fixed width */
+    height: 100px; /* Set a fixed height for uniformity */
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+    cursor: pointer; /* Changes cursor to pointer for clarity */
+}
+
+.contact-image:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
